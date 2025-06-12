@@ -1,11 +1,11 @@
 :root {
-  --primary-color:#8a461e;      
-  --secondary-color: #3B82F6;   
-  --accent-color: #BFDBFE;       
-  --text-light: #FFFFFF;         
-  --text-dark: #1E40AF;          
-  --background-light: #DBEAFE;    
-  --background-dark: #93C5FD;     
+  --primary-color:#d62828;      
+  --secondary-color: #f77f00;   
+  --accent-color: #fcbf49;       
+  --text-light: #fff8e7;         
+  --text-dark: #2d2d2d;          
+  --background-light: #fff4e6;    
+  --background-dark: #6a4e42;     
   --transition-speed: 0.3s;
 }
 
@@ -235,7 +235,7 @@ section {
   color: var(--text-light);
   text-align: center;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(214, 40, 40);
   position: relative;
 }
 
@@ -331,7 +331,7 @@ section {
 .card2 a:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(214, 40 , 40, 0.3);
 }
 
 .card2b {
@@ -339,7 +339,7 @@ section {
   min-width: 300px;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(214, 40 , 40, 0.3);
 }
 
 .card2b img {
@@ -399,7 +399,7 @@ section {
   max-width: 500px;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(214, 40, 40);
 }
 
 .card4a {
@@ -444,7 +444,7 @@ section {
 
 .card4 a:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(214, 40, 40, 0.3);
 }
 
 /* Premium Products Section */
@@ -485,7 +485,7 @@ section {
 .card5 a:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(247, 127, 0, 0.4);
 }
 
 /* Testimonial Section */
@@ -561,7 +561,7 @@ section {
   min-width: 300px;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(247, 127, 0, 0.4);
   background-color: var(--accent-color);
   transition: transform var(--transition-speed) ease;
   position: relative;
@@ -641,7 +641,7 @@ section {
   position: absolute;
   left: 15px;
   top: 0;
-  color: rgba(74, 44, 34, 0.1);
+  color: rgba(247, 127, 0, 0.4);
 }
 
 .testimonial-author {
@@ -673,12 +673,12 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(74, 44, 34, 0.1);
+  background-color: rgba(247, 127, 0);
 }
 
 .arrow-prev:hover,
 .arrow-next:hover {
-  background-color: rgba(74, 44, 34, 0.2);
+  background-color: rgba(247, 127, 0);
   transform: scale(1.1);
 }
 
@@ -727,7 +727,7 @@ section {
   width: 100%;
   max-width: 800px;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(247, 127, 0, 0.4);
 }
 
 /* Resources Section */
@@ -781,7 +781,7 @@ section {
   max-width: 380px;
   padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(214, 40 , 40, 0.3);
   background-color: var(--accent-color);
   transition: transform var(--transition-speed) ease;
   position: relative;
@@ -819,7 +819,7 @@ section {
 .card9 a:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(214, 40, 40, 0.3);
 }
 
 /* Community Section */
@@ -837,7 +837,7 @@ section {
   color: var(--text-light);
   text-align: center;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(247, 40, 40 ,0.3);
   position: relative;
 }
 
@@ -876,7 +876,7 @@ section {
   background-color: var(--accent-color);
   color: var(--text-dark);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(214, 40, 40, 0.3);
 }
 
 /* FAQ Section */
@@ -954,7 +954,7 @@ details {
   border-radius: 8px;
   overflow: hidden;
   background-color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0247, 127, 0, 0.4);
   position: relative;
   z-index: 1;
 }
@@ -1087,7 +1087,7 @@ form {
   background-color: var(--accent-color);
   padding: 40px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(214, 40, 40);
   position: relative;
 }
 
@@ -1109,7 +1109,7 @@ form textarea {
   width: 100%;
   padding: 12px 15px;
   margin-bottom: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(214, 40, 40);
   border-radius: 8px;
   font-size: 1rem;
   font-family: 'Georgia', serif;
@@ -1139,7 +1139,7 @@ form button {
 form button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(214, 40, 40);
 }
 
 /* Footer */
