@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = index;
     const cardWidth = testimonialCards[0].offsetWidth + 30; // Card width + gap
     cardsWrapper.style.transition = 'transform 0.8s ease';
-    cardsWrapper.style.transform = translateX(-${currentIndex * cardWidth}px);
+    cardsWrapper.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
     updateIndicators();
   };
 
@@ -102,4 +102,112 @@ document.addEventListener('DOMContentLoaded', () => {
     const isClickInsideNavbar = event.target.closest('.navbar');
     if (!isClickInsideNavbar && navLinks.classList.contains('show')) {
       navLinks.classList.remove('show');
-      hamburger.classList.rem…
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      console.log('Menu closed via outside click'); // Debug
+    }
+  };
+
+  // Smooth scrolling for anchor links
+  const setupSmoothScrolling = () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', (e) => {
+        if (anchor.hash) {
+          e.preventDefault();
+          const target = document.querySelector(anchor.hash);
+          if (target) {
+            const offset = window.innerWidth <= 480 ? 50 : window.innerWidth <= 576 ? 60 : window.innerWidth <= 768 ? 70 : 90;
+            window.scrollTo({
+              top: target.offsetTop - offset,
+              behavior: 'smooth'
+            });
+            if (window.innerWidth <= 768 && navLinks.classList.contains('show')) {
+              toggleMenu(e);
+            }
+          }
+        }
+      });
+    });
+  };
+
+  // Form submission handler
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    console.log('Form submitted:', Object.fromEntries(formData));
+    alert('Thank you for your message! We will get back to you soon.');
+    form.reset();
+  };
+
+  // Initialize everything
+  const init = () => {
+    // Mobile menu setup
+    if (hamburger) {
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.addEventListener('click', toggleMenu);
+      document.addEventListener('click', closeMenuOnClickOutside);
+    } else {
+      console.error('Hamburger button not found in the DOM');
+    }
+
+    // Smooth scrolling
+    setupSmoothScrolling();
+
+    // Form handling
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', handleFormSubmit);
+    }
+
+    // Testimonial carousel (desktop only)
+    if (cardCount > 0) {
+      createIndicators();
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          prevSlide();
+          pauseAutoSlide();
+          startAutoSlide();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          nextSlide();
+          pauseAutoSlide();
+          startAutoSlide();
+        });
+      }
+      const container = document.querySelector('.testimonial-container');
+      if (container) {
+        container.addEventListener('mouseenter', pauseAutoSlide);
+        container.addEventListener('mouseleave', startAutoSlide);
+      }
+      if (window.innerWidth > 768) {
+        startAutoSlide();
+      }
+    }
+
+    // Update layout on resize
+    window.addEventListener('resize', () => {
+      const isDesktopMode = updateCardWidth();
+      createIndicators();
+      if (isDesktopMode) {
+        goToSlide(currentIndex);
+        startAutoSlide();
+      } else {
+        pauseAutoSlide();
+      }
+      if (window.innerWidth > 768 && navLinks && hamburger) {
+        navLinks.classList.remove('show');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Initial layout update
+    updateCardWidth();
+    createIndicators();
+  };
+
+  init();
+});
